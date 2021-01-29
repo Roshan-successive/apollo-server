@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 export default {
   loginUser: async (parent, args, context) => {
     const { payload: { email, password } } = args;

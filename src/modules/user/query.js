@@ -1,5 +1,9 @@
-import user from '../../service/user';
-
+/* eslint-disable no-console */
 export default {
-  getMyProfile: () => user.getAll(),
+  getMe: async (parent, args, context) => {
+    const { dataSources: { userApi } } = context;
+    const response = await userApi.getMe();
+    console.log(response);
+    return response.data.user;
+  },
 };
